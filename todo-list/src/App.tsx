@@ -1,12 +1,21 @@
 import './App.css'
 import {BrowserRouter} from "react-router-dom";
 import {Routing} from "./features/Routing.tsx";
+import {TodoList} from "./features/todo/TodoList.tsx";
+import '@mantine/core/styles.css';
+import {createTheme, MantineProvider} from "@mantine/core";
+
+const theme = createTheme({
+    /** Put your mantine theme override here */
+});
 
 function App() {
     return (
-      <BrowserRouter>
-          <Routing />
-      </BrowserRouter>
+        <MantineProvider theme={theme}>
+            <BrowserRouter>
+                <Routing/>
+            </BrowserRouter>
+        </MantineProvider>
     );
 }
 
